@@ -81,11 +81,8 @@ bool __stdcall hooks::create_move( float frame_time, c_usercmd* user_cmd ) {
 
 	if (!interfaces::entity_list->get_client_entity(interfaces::engine->get_local_player()))
 		return original_fn;
-
-	static bool bPerformed = false, bLastSetting;
-
+	
 	auto local_player = reinterpret_cast<player_t*>(interfaces::entity_list->get_client_entity(interfaces::engine->get_local_player()));
-
 
 	if (interfaces::engine->is_connected() && interfaces::engine->is_in_game())
 	{
